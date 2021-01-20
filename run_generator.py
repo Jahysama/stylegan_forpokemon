@@ -326,7 +326,7 @@ def generate_images(G, args):
         images = utils.tensor_to_PIL(
             generated, pixel_min=args.pixel_min, pixel_max=args.pixel_max)
         for seed, img in zip(args.seeds[i: i + args.batch_size], images):
-            img.save(os.path.join(args.output, 'seed%04d.png' % seed))
+            img.save(os.path.join(args.output, 'generated.png' % seed))
             progress.step()
 
     progress.write('Done!', step=False)
